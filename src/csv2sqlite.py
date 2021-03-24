@@ -57,7 +57,6 @@ def csv2sqlite(db_directory=None, csv_directory=None, verbose=False):
         fname for fname in os.listdir(csv_directory)
         if fname.endswith(CSV_FNAME_EXTENSION)])
     csv_paths = [os.path.join(csv_directory, fname) for fname in csv_fnames]
-    assert csv_fnames, 'No CSV files found: %s' % csv_directory
 
     init_db(schema_path, db_path, verbose=verbose)
     for csv_path in csv_paths:
